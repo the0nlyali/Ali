@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Mushtaq - Cybersecurity Engineer</title>
-    <!-- Preload critical resources -->
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
+    <!-- Preloads -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
     <link rel="preload" href="./assets/css/style.css" as="style">
     <link rel="preconnect" href="https://www.credly.com">
-    <link rel="dns-prefetch" href="//cdn.credly.com">
-    
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -26,16 +27,16 @@
                     <h2>Hi, I'm Ali Mushtaq</h2>
                     <p class="title">Second Stage Cybersecurity Engineering Student</p>
                     <p class="location">Alshaab University</p>
-                    <p class="location">Baghdad, IRAQ ♥</p>
+                    <p class="location">Baghdad, IRAQ 📍</p>
                     
                     <div class="social-bar">
                         <a href="https://instagram.com" target="_blank" class="social-icon instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin">
+                        <a href="https://linkedin.com/in/theonlyali" target="_blank" class="social-icon linkedin">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com" target="_blank" class="social-icon github">
+                        <a href="https://github.com/the0nlyali" target="_blank" class="social-icon github">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://facebook.com" target="_blank" class="social-icon facebook">
@@ -47,14 +48,13 @@
                     </div>
                 </div>
                 <div class="profile-image">
-                    <img src="./assets/images/profile.webp" alt="Ali Mushtaq" loading="lazy">
+                    <img src="./assets/images/profile.webp" alt="Ali Mushtaq" loading="lazy" width="300" height="300">
                 </div>
             </section>
 
             <section class="certifications">
                 <h3>My Certifications</h3>
                 <div class="cert-grid">
-                    <!-- Badges Only - No Text -->
                     <div class="cert-card">
                         <div data-iframe-width="150" data-iframe-height="270" 
                              data-share-badge-id="f1b6e6ab-6a8b-4dde-b757-e5ff460156cc" 
@@ -78,10 +78,9 @@
         </main>
     </div>
 
-    <!-- Optimized Credly Badge Loading -->
-    <script defer>
-        // Load Credly async with fallback
-        const loadCredly = () => {
+    <script>
+        // Badge loading with fallback
+        window.addEventListener('DOMContentLoaded', () => {
             const script = document.createElement('script');
             script.src = 'https://cdn.credly.com/assets/utilities/embed.js';
             script.onerror = () => {
@@ -94,8 +93,7 @@
                 });
             };
             document.head.appendChild(script);
-        };
-        window.addEventListener('DOMContentLoaded', loadCredly);
+        });
     </script>
 </body>
 </html>
