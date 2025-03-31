@@ -1,51 +1,20 @@
-// Smooth Scroll Effect
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Portfolio loaded successfully!');
+    
+    // Certification cards interaction
+    const certCards = document.querySelectorAll('.cert-card:not(.credly-badge)');
+    certCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.style.backgroundColor = '#006d6d';
+            setTimeout(() => {
+                this.style.backgroundColor = '#1e1e1e';
+            }, 300);
+        });
     });
-});
 
-// Smart Social Bar Behavior
-const socialBar = document.querySelector('.social-footer');
-let lastScroll = 0;
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    const certsSection = document.querySelector('.certifications');
-    
-    // Hide bar only when scrolling down past certifications
-    if (currentScroll > certsSection.offsetTop + 100) {
-        socialBar.classList.toggle('hidden', currentScroll > lastScroll);
-    } else {
-        socialBar.classList.remove('hidden');
-    }
-    lastScroll = currentScroll;
-});
-
-// Auto-focus certifications on load
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        document.querySelector('.certifications').scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }, 500);
-});
-
-// Fade-in animations
-document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    elements.forEach(element => observer.observe(element));
+    // Social icons wave animation
+    const socialIcons = document.querySelectorAll('.social-icon');
+    socialIcons.forEach((icon, index) => {
+        icon.style.transitionDelay = `${index * 0.1}s`;
+    });
 });
