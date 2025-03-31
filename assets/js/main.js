@@ -18,3 +18,22 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.style.transitionDelay = `${index * 0.1}s`;
     });
 });
+// Adds loading animation while badges render
+document.addEventListener('DOMContentLoaded', () => {
+    const certCards = document.querySelectorAll('.cert-card');
+    
+    certCards.forEach(card => {
+        // Show loading placeholder
+        if (!card.querySelector('img, iframe')) {
+            card.style.background = '#1e1e1e url(./assets/images/loading.gif) no-repeat center';
+        }
+        
+        // Click effects for non-Credly cards
+        if (!card.classList.contains('black-card')) {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => card.style.transform = '', 300);
+            });
+        }
+    });
+});
