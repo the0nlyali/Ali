@@ -274,3 +274,26 @@ header h1 {
     max-width: 900px;
     margin: 0 auto;
 }
+/* Badge Optimization */
+.cert-card {
+    min-height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cert-card > div {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Performance Tweaks */
+.profile-image img {
+    loading: lazy;
+    width: 100%;
+    height: auto;
+}
+
+.social-icon i {
+    font-display: swap;
+}
