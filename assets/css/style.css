@@ -1,373 +1,127 @@
-/* ===== CYBERSECURITY DARK/TEAL THEME ===== */
-/* Designed for ali.alrubaye.me */
-/* GitHub: github.com/the0nlyali/Ali */
-
-/* ===== CORE VARIABLES ===== */
-:root {
-  /* Dark Base Colors */
-  --dark-0: #050507;       /* Deep black */
-  --dark-1: #0a0a12;       /* Primary dark */
-  --dark-2: #12121b;       /* Secondary dark */
-  
-  /* Teal Spectrum */
-  --teal-1: #1a3a3f;       /* Dark teal */
-  --teal-2: #2a9d8f;       /* Primary teal */
-  --teal-3: #4df0d3;       /* Bright accent */
-  
-  /* Text Colors */
-  --text-primary: #e0e0e0;
-  --text-secondary: #b0b0b0;
-  --text-accent: #4df0d3;
-  
-  /* Effects */
-  --glow: 0 0 15px rgba(77, 240, 211, 0.5);
-  --transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-/* ===== BASE STYLES ===== */
-body {
-  font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
-  color: var(--text-primary);
-  background: 
-    radial-gradient(circle at 20% 30%, var(--teal-1) 0%, var(--dark-1) 70%) fixed,
-    url('../images/bg01.webp') center/cover fixed;
-  line-height: 1.6;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* ===== LAYERED BACKGROUND ===== */
-.bg-overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg, 
-    rgba(10, 10, 18, 0.95) 0%, 
-    rgba(26, 58, 63, 0.9) 100%
-  );
-  z-index: -1;
-  backdrop-filter: blur(2px);
-}
-
-/* ===== PROFILE SECTION ===== */
-.profile-container {
-  position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  filter: drop-shadow(var(--glow));
-}
-
-.profile-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 3px solid var(--teal-2);
-  object-fit: cover;
-  transition: var(--transition);
-  box-shadow: 
-    0 0 20px rgba(42, 157, 143, 0.6),
-    inset 0 0 15px rgba(42, 157, 143, 0.3);
-}
-
-.profile-img:hover {
-  transform: translateX(-50%) scale(1.05) rotate(5deg);
-  border-color: var(--teal-3);
-  box-shadow: 
-    0 0 30px rgba(77, 240, 211, 0.8),
-    inset 0 0 20px rgba(77, 240, 211, 0.4);
-}
-
-/* ===== HEADER/TYPOGRAPHY ===== */
-.header {
-  padding: 10rem 2rem 4rem;
-  text-align: center;
-  position: relative;
-}
-
-h1 {
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  margin-bottom: 1rem;
-  letter-spacing: 1.5px;
-  background: linear-gradient(45deg, var(--teal-2), var(--teal-3));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 10px rgba(77, 240, 211, 0.2);
-  animation: fadeIn 1s ease-out;
-}
-
-.underline {
-  width: 5rem;
-  height: 4px;
-  background: linear-gradient(90deg, var(--teal-2), var(--teal-3));
-  margin: 0 auto 1.5rem;
-  border-radius: 2px;
-  animation: grow 0.8s ease-out;
-}
-
-.subtitle {
-  font-size: clamp(1rem, 3vw, 1.2rem);
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-  animation: fadeIn 1.2s ease-out;
-}
-
-.location {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-weight: 500;
-  color: var(--teal-3);
-}
-
-/* ===== CERTIFICATIONS SECTION ===== */
-.certifications {
-  padding: 3rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.certifications h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
-  color: var(--teal-3);
-  text-shadow: 0 0 8px rgba(77, 240, 211, 0.3);
-}
-
-.certs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-.cert-card {
-  background: rgba(18, 18, 27, 0.7);
-  border: 1px solid var(--teal-1);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: var(--transition);
-  backdrop-filter: blur(5px);
-  opacity: 0;
-  transform: translateY(20px);
-  box-shadow: 
-    0 4px 15px rgba(0, 0, 0, 0.1),
-    inset 0 0 10px rgba(42, 157, 143, 0.1);
-}
-
-.cert-card:hover {
-  transform: translateY(-8px);
-  background: rgba(26, 58, 63, 0.4);
-  border-color: var(--teal-3);
-  box-shadow: 
-    0 8px 25px rgba(77, 240, 211, 0.3),
-    inset 0 0 15px rgba(77, 240, 211, 0.2);
-}
-
-/* ===== SOCIAL FOOTER ===== */
-.social-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 1.2rem 0;
-  background: rgba(10, 10, 18, 0.7);
-  backdrop-filter: blur(8px);
-  z-index: 100;
-  border-top: 1px solid rgba(42, 157, 143, 0.2);
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.social-icons a {
-  color: var(--text-secondary);
-  font-size: 1.6rem;
-  transition: var(--transition);
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.social-icons a:hover {
-  transform: translateY(-5px) scale(1.15);
-  color: white;
-}
-
-/* Social Brand Colors */
-.fa-linkedin:hover { color: #0A66C2 !important; text-shadow: 0 0 10px rgba(10, 102, 194, 0.5); }
-.fa-facebook:hover { color: #1877F2 !important; text-shadow: 0 0 10px rgba(24, 119, 242, 0.5); }
-.fa-instagram:hover { 
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent !important;
-  text-shadow: none;
-}
-.fa-telegram:hover { color: #0088cc !important; text-shadow: 0 0 10px rgba(0, 136, 204, 0.5); }
-.fa-github:hover { color: #6e5494 !important; text-shadow: 0 0 10px rgba(110, 84, 148, 0.5); }
-.fa-envelope:hover { color: #EA4335 !important; text-shadow: 0 0 10px rgba(234, 67, 53, 0.5); }
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes grow {
-  from { width: 0; opacity: 0; }
-  to { width: 5rem; opacity: 1; }
-}
-
-@keyframes pulse-glow {
-  0% { box-shadow: 0 0 10px rgba(42, 157, 143, 0.6); }
-  100% { box-shadow: 0 0 30px rgba(77, 240, 211, 0.8); }
-}
-
-/* ===== MOBILE RESPONSIVENESS ===== */
-@media (max-width: 768px) {
-  .profile-img {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .header {
-    padding: 7rem 1rem 3rem;
-  }
-  
-  .certs-grid {
-    grid-template-columns: 1fr;
+/* Global Styles */
+* {
+    margin: 0;
     padding: 0;
-  }
-  
-  .social-icons {
-    gap: 1rem;
-  }
-  
-  .social-icons a {
-    font-size: 1.4rem;
-    width: 2.2rem;
-    height: 2.2rem;
-  }
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* ===== UTILITY CLASSES ===== */
-.more-certs {
-  display: inline-block;
-  color: var(--teal-3);
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 2rem;
-  padding: 0.5rem 1.5rem;
-  border: 2px solid var(--teal-2);
-  border-radius: 50px;
-  transition: var(--transition);
-  background: rgba(26, 58, 63, 0.3);
+body {
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
 }
 
-.more-certs:hover {
-  background: rgba(77, 240, 211, 0.1);
-  transform: translateX(10px);
-  border-color: var(--teal-3);
-  box-shadow: 0 0 15px rgba(77, 240, 211, 0.3);
+/* Background Overlay */
+.bg-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    z-index: -1;
 }
-/* ===== NEW WELCOME HEADER ===== */
+
+/* Profile Section */
+.profile-container {
+    margin-top: 50px;
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #38bdf8;
+    box-shadow: 0px 0px 15px #38bdf8;
+}
+
+/* Header */
+.header {
+    margin-top: 20px;
+}
 .header h1 {
-    content: "Welcome to My Portfolio";
-    color: var(--teal-2);
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: #38bdf8;
+}
+.underline {
+    width: 80px;
+    height: 4px;
+    background: #38bdf8;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #cbd5e1;
+}
+.name-highlight {
+    color: #38bdf8;
+    font-weight: bold;
 }
 
-.header .subtitle::before {
-    content: "Hi, I'm ";
-    color: var(--text-primary);
-}
-
-/* ===== CERTIFICATION VISIBILITY FIX ===== */
+/* Certifications */
 .certifications {
-    scroll-margin-top: 100px; /* Prevents social bar overlap */
+    margin-top: 50px;
 }
-
-.cert-card {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
+.certifications h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #38bdf8;
 }
-
-/* ===== SMART SOCIAL BAR ===== */
-.social-footer {
-    transition: transform 0.3s ease;
-}
-
-.social-footer.hidden {
-    transform: translateY(100%);
-}
-
-/* ===== AUTO-SCROLL EFFECT ===== */
-@media (min-width: 768px) {
-    main {
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        height: 100vh;
-    }
-    
-    section {
-        scroll-snap-align: start;
-    }
-}
-/* ===== COMPACT CERTIFICATION CARDS ===== */
 .certs-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-
 .cert-card {
-  width: 160px; /* Fixed width */
-  height: 180px; /* Fixed height */
-  padding: 12px;
-  margin: 0;
+    background: #1e293b;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 180px;
+    transition: transform 0.3s;
 }
-
-/* Credly badge sizing */
-.cert-card div[data-iframe-width] {
-  width: 140px !important;
-  height: 140px !important;
-  margin: 0 auto;
+.cert-card:hover {
+    transform: scale(1.05);
 }
-
-/* Certification text */
 .cert-info {
-  text-align: center;
-  margin-top: 8px;
-  font-size: 0.9rem;
+    margin-top: 10px;
 }
-
 .cert-info h3 {
-  font-size: 1rem;
-  margin: 0;
-  color: var(--teal-2);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    font-size: 1.2rem;
+    color: #38bdf8;
+}
+.cert-info p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
 }
 
-.cert-info p {
-  font-size: 0.8rem;
-  margin: 3px 0 0;
-  color: var(--text-secondary);
+/* Social Footer */
+.social-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 41, 59, 0.8);
+    padding: 10px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+.social-footer.hidden {
+    transform: translateX(-50%) translateY(100px);
+}
+.social-icons {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.social-icons li a {
+    color: #38bdf8;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+.social-icons li a:hover {
+    color: #fff;
 }
