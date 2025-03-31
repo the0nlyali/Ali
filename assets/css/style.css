@@ -1,25 +1,36 @@
-/* Reset */
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== VARIABLES ===== */
 :root {
     --teal: #2a9d8f;
     --dark: #1d3557;
-    --bg-overlay: rgba(29, 53, 87, 0.9);
+    --bg-overlay: rgba(29, 53, 87, 0.85);
 }
 
+/* ===== BASE STYLES ===== */
 body {
-    background: url('../images/bg01.jpg') fixed center/cover;
     font-family: 'Segoe UI', system-ui;
-    color: white;
+    color: #fff;
     line-height: 1.6;
+    background: url('/assets/images/bg01.webp') fixed center/cover;
     min-height: 100vh;
+    position: relative;
 }
 
-/* Profile Image */
+/* ===== LAYOUT ===== */
+.bg-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-overlay);
+    z-index: -1;
+}
+
 .profile-container {
     position: absolute;
     top: 30px;
@@ -34,19 +45,20 @@ body {
     border-radius: 50%;
     border: 4px solid var(--teal);
     box-shadow: 0 0 25px rgba(42, 157, 143, 0.5);
-    transition: 0.3s;
+    transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
 .profile-img:hover {
     transform: scale(1.05);
 }
 
-/* Header */
 .header {
-    text-align: center;
     padding: 140px 20px 40px;
+    text-align: center;
 }
 
+/* ===== TYPOGRAPHY ===== */
 h1 {
     font-size: 2.8rem;
     margin-bottom: 15px;
@@ -63,9 +75,16 @@ h1 {
 .subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Certifications */
+.location {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* ===== CERTIFICATIONS ===== */
 .certifications {
     padding: 40px 20px;
     max-width: 1200px;
@@ -82,17 +101,14 @@ h1 {
 .cert-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--teal);
+    border-radius: 12px;
     padding: 25px;
-    border-radius: 10px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.cert-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Social Footer */
+/* ===== SOCIAL FOOTER ===== */
 .social-footer {
     position: fixed;
     bottom: 0;
@@ -110,15 +126,12 @@ h1 {
 }
 
 .social-icons a {
-    color: white;
+    color: #fff;
     font-size: 1.8rem;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-    transform: scale(1.2);
-}
-
+/* Social Hover Colors */
 .fa-linkedin:hover { color: #0A66C2; }
 .fa-facebook:hover { color: #1877F2; }
 .fa-instagram:hover { color: #E1306C; }
@@ -126,9 +139,32 @@ h1 {
 .fa-github:hover { color: #6e5494; }
 .fa-envelope:hover { color: #EA4335; }
 
-/* Mobile */
+/* ===== UTILITIES ===== */
+.more-certs {
+    display: inline-block;
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.more-certs:hover {
+    transform: translateX(10px);
+    text-decoration: underline;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }
     .profile-img { width: 120px; height: 120px; }
     .certs-grid { grid-template-columns: 1fr; }
+    .social-icons { gap: 15px; }
+    .social-icons a { font-size: 1.5rem; }
 }
