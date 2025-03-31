@@ -328,3 +328,46 @@ h1 {
         scroll-snap-align: start;
     }
 }
+/* ===== COMPACT CERTIFICATION CARDS ===== */
+.certs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.cert-card {
+  width: 160px; /* Fixed width */
+  height: 180px; /* Fixed height */
+  padding: 12px;
+  margin: 0;
+}
+
+/* Credly badge sizing */
+.cert-card div[data-iframe-width] {
+  width: 140px !important;
+  height: 140px !important;
+  margin: 0 auto;
+}
+
+/* Certification text */
+.cert-info {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.cert-info h3 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--teal-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cert-info p {
+  font-size: 0.8rem;
+  margin: 3px 0 0;
+  color: var(--text-secondary);
+}
