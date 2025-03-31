@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Mushtaq | Cybersecurity Engineer</title>
-    <!-- PROPER CSS LINK -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- OPTIMIZED FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="/assets/images/bg01.webp" as="image">
+    <link rel="preload" href="/assets/webfonts/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Local Font Awesome -->
+    <link rel="stylesheet" href="/assets/webfonts/css/all.min.css">
+    <!-- CDN Fallback -->
+    <script>
+      if(!document.querySelector('.fa')) {
+        document.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">');
+      }
+    </script>
 </head>
 <body class="is-preload">
     <!-- Background & Profile -->
     <div class="bg-overlay"></div>
     <div class="profile-container">
-        <img src="assets/images/profile.jpg" alt="Ali Mushtaq" class="profile-img">
+        <img src="/assets/images/profile.webp" alt="Ali Mushtaq" class="profile-img" loading="lazy">
     </div>
 
     <!-- Main Content -->
@@ -32,14 +41,14 @@
             <h2>Cisco Certifications</h2>
             <div class="certs-grid">
                 <div class="cert-card">
-                    <h3>GitHub Foundations</h3>
-                    <p>Issuer: GitHub</p>
-                    <span class="cert-date">2023</span>
+                    <div data-iframe-width="150" 
+                         data-iframe-height="270" 
+                         data-share-badge-id="d7b0fa9b-358c-439e-a1c3-cac3e5755ab1" 
+                         data-share-badge-host="https://www.credly.com"></div>
                 </div>
-                <!-- Add more certs -->
+                <!-- Add more badges -->
             </div>
-
-            <a href="YOUR_CREDLY_URL" class="more-certs">
+            <a href="https://www.credly.com/users/your-profile" class="more-certs">
                 View All Certificates →
             </a>
         </section>
@@ -47,15 +56,15 @@
         <!-- Social Links -->
         <footer class="social-footer">
             <ul class="social-icons">
-                <li><a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">
                     <i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://facebook.com/yourprofile" target="_blank">
+                <li><a href="https://facebook.com/yourprofile" target="_blank" rel="noopener">
                     <i class="fab fa-facebook"></i></a></li>
-                <li><a href="https://instagram.com/yourprofile" target="_blank">
+                <li><a href="https://instagram.com/yourprofile" target="_blank" rel="noopener">
                     <i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://t.me/yourprofile" target="_blank">
+                <li><a href="https://t.me/yourprofile" target="_blank" rel="noopener">
                     <i class="fab fa-telegram"></i></a></li>
-                <li><a href="https://github.com/the0nlyali" target="_blank">
+                <li><a href="https://github.com/the0nlyali" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i></a></li>
                 <li><a href="mailto:ali@alrubaye.me">
                     <i class="fas fa-envelope"></i></a></li>
@@ -63,7 +72,8 @@
         </footer>
     </main>
 
-    <!-- PROPER JS LINK -->
-    <script src="assets/js/main.js"></script>
+    <!-- Credly + Main JS -->
+    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
