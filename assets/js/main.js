@@ -1,3 +1,14 @@
+// Smooth Scroll Effect
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
 // Smart Social Bar Behavior
 const socialBar = document.querySelector('.social-footer');
 let lastScroll = 0;
@@ -19,8 +30,22 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.querySelector('.certifications').scrollIntoView({ 
-            behavior: 'auto',
+            behavior: 'smooth',
             block: 'start'
         });
     }, 500);
+});
+
+// Fade-in animations
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    elements.forEach(element => observer.observe(element));
 });
