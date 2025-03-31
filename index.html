@@ -6,6 +6,8 @@
     <title>Ali Mushtaq - Cybersecurity Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://www.credly.com">
+    <link rel="dns-prefetch" href="//cdn.credly.com">
 </head>
 <body>
     <div class="container">
@@ -54,7 +56,7 @@
                              data-share-badge-host="https://www.credly.com"></div>
                     </div>
                     
-                    <!-- Introduction to Data Science (Green) -->
+                    <!-- Intro to Modern AI (Green) -->
                     <div class="cert-card green-card">
                         <div data-iframe-width="150" data-iframe-height="270" 
                              data-share-badge-id="df38c94c-bd59-4987-8a24-63b30edcbb1d" 
@@ -63,9 +65,16 @@
                     
                     <!-- GitHub Foundations (Black) -->
                     <div class="cert-card black-card">
-                        <div data-iframe-width="150" data-iframe-height="270" 
-                             data-share-badge-id="d7b0fa9b-358c-439e-a1c3-cac3e5755ab1" 
-                             data-share-badge-host="https://www.credly.com"></div>
+                        <div class="cert-content">
+                            <div data-iframe-width="150" data-iframe-height="180" 
+                                 data-share-badge-id="d7b0fa9b-358c-439e-a1c3-cac3e5755ab1" 
+                                 data-share-badge-host="https://www.credly.com"></div>
+                            <div class="cert-details">
+                                <h4>GitHub Foundations</h4>
+                                <p><strong>Issuer:</strong> GitHub</p>
+                                <p><strong>Version:</strong> 0.4.6</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="more-certs">
@@ -75,8 +84,26 @@
         </main>
     </div>
 
-    <!-- SINGLE Credly script (all badges use this) -->
-    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+    <!-- Badge loading system -->
+    <script>
+        // Primary load
+        const credlyScript = document.createElement('script');
+        credlyScript.src = 'https://cdn.credly.com/assets/utilities/embed.js';
+        credlyScript.async = true;
+        
+        // Fallback if primary fails
+        credlyScript.onerror = () => {
+            console.log("Using fallback badge rendering");
+            document.querySelectorAll('[data-share-badge-id]').forEach(badge => {
+                badge.innerHTML = `
+                    <a href="https://www.credly.com/badges/${badge.dataset.shareBadgeId}" target="_blank">
+                        <img src="https://images.credly.com/size/220x220/badges/${badge.dataset.shareBadgeId}/image.png" 
+                             alt="Credly badge" style="width:100%;height:100%;object-fit:contain;">
+                    </a>`;
+            });
+        };
+        document.head.appendChild(credlyScript);
+    </script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
