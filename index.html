@@ -1,143 +1,84 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Ali | Cybersecurity Student</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-		<style>
-			/* Modern Dark Theme */
-			body {
-				background: #0a0a0a;
-				color: #f0f0f0;
-				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-				text-align: center;
-				margin: 0;
-				padding: 0;
-				line-height: 1.6;
-				overflow-x: hidden;
-			}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="is-preload">
+    <!-- Background & Profile -->
+    <div class="bg-overlay"></div>
+    <div class="profile-container">
+        <img src="assets/images/profile.jpg" alt="Ali Mushtaq" class="profile-img">
+    </div>
 
-			/* Header Animation */
-			#header {
-				padding: 12vh 2rem;
-				position: relative;
-				z-index: 10;
-			}
+    <!-- Main Content -->
+    <main>
+        <header class="header">
+            <h1>Ali Mushtaq Abdulmunem</h1>
+            <div class="underline"></div>
+            <p class="subtitle">
+                Second Stage Cybersecurity Engineering Student<br>
+                <span class="location">📍 Baghdad, Iraq</span>
+            </p>
+        </header>
 
-			h1 {
-				font-size: 2.5rem;
-				margin-bottom: 1rem;
-				background: linear-gradient(45deg, #00b4ff, #00ff95);
-				-webkit-background-clip: text;
-				background-clip: text;
-				color: transparent;
-				animation: fadeIn 1.5s ease;
-			}
+        <!-- Certifications Section -->
+        <section class="certifications">
+            <h2>Cisco Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div data-iframe-width="150" 
+                         data-iframe-height="270" 
+                         data-share-badge-id="d7b0fa9b-358c-439e-a1c3-cac3e5755ab1" 
+                         data-share-badge-host="https://www.credly.com"></div>
+                </div>
 
-			#header p {
-				font-size: 1.2rem;
-				max-width: 600px;
-				margin: 0 auto;
-				opacity: 0.9;
-				animation: fadeIn 2s ease;
-			}
+                <div class="cert-card">
+                    <div data-iframe-width="150" 
+                         data-iframe-height="270" 
+                         data-share-badge-id="f1b6e6ab-6a8b-4dde-b757-e5ff460156cc" 
+                         data-share-badge-host="https://www.credly.com"></div>
+                </div>
 
-			/* Social Icons - Floating & Animated */
-			#footer {
-				position: fixed;
-				bottom: 0;
-				width: 100%;
-				padding: 1.5rem 0;
-				background: rgba(10, 10, 10, 0.7);
-				backdrop-filter: blur(10px);
-				z-index: 100;
-			}
+                <div class="cert-card">
+                    <div data-iframe-width="150" 
+                         data-iframe-height="270" 
+                         data-share-badge-id="e3937d95-f4aa-49c9-8b03-e55a2008bb08" 
+                         data-share-badge-host="https://www.credly.com"></div>
+                </div>
+            </div>
 
-			.icons {
-				display: flex;
-				justify-content: center;
-				gap: 1.5rem;
-				padding: 0;
-				margin: 0;
-				list-style: none;
-			}
+            <a href="https://www.credly.com/users/your-profile" 
+               target="_blank" 
+               class="more-certs">
+                View All Certificates →
+            </a>
+        </section>
 
-			.icons li a {
-				color: #f0f0f0;
-				font-size: 1.5rem;
-				transition: all 0.3s ease;
-				display: inline-block;
-			}
+        <!-- Social Links -->
+        <footer class="social-footer">
+            <ul class="social-icons">
+                <li><a href="https://linkedin.com/in/your-linkedin" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://facebook.com/your-facebook" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://instagram.com/your-instagram" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://t.me/your-telegram" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram"></i></a></li>
+                <li><a href="https://github.com/the0nlyali" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i></a></li>
+                <li><a href="mailto:ali@alrubaye.me" title="Email">
+                    <i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </footer>
+    </main>
 
-			/* Icon Hover Effects */
-			.icons li a:hover {
-				transform: translateY(-5px) scale(1.1);
-			}
-
-			.fa-twitter:hover { color: #1DA1F2; }
-			.fa-instagram:hover { color: #E1306C; }
-			.fa-telegram:hover { color: #0088cc; }
-			.fa-facebook:hover { color: #1877F2; }
-			.fa-github:hover { color: #6e5494; }
-			.fa-envelope:hover { color: #EA4335; }
-
-			/* Pulse Animation for Telegram (Highlight) */
-			.fa-telegram {
-				animation: pulse 2s infinite;
-			}
-
-			@keyframes pulse {
-				0% { transform: scale(1); }
-				50% { transform: scale(1.1); }
-				100% { transform: scale(1); }
-			}
-
-			@keyframes fadeIn {
-				from { opacity: 0; transform: translateY(20px); }
-				to { opacity: 1; transform: translateY(0); }
-			}
-
-			/* Gradient Underline */
-			.header-underline {
-				height: 3px;
-				width: 100px;
-				background: linear-gradient(90deg, #00b4ff, #00ff95);
-				margin: 1rem auto;
-				border-radius: 3px;
-			}
-		</style>
-	</head>
-	<body class="is-preload">
-
-		<!-- Header -->
-		<header id="header">
-			<h1>Ali Mushtaq Abdulmunem</h1>
-			<div class="header-underline"></div>
-			<p>Welcome to my personal website!<br />
-			I'm a cybersecurity engineering student from Iraq.</p>
-		</header>
-
-		<!-- Footer with Cool Social Buttons -->
-		<footer id="footer">
-			<ul class="icons">
-				<li><a href="https://twitter.com/yourhandle" class="icon brands fa-twitter" title="Twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="https://www.instagram.com/yourhandle" class="icon brands fa-instagram" title="Instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="https://facebook.com/yourhandle" class="icon brands fa-facebook" title="Facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="https://t.me/yourhandle" class="icon brands fa-telegram" title="Telegram"><span class="label">Telegram</span></a></li>
-				<li><a href="https://github.com/the0nlyali" class="icon brands fa-github" title="GitHub"><span class="label">GitHub</span></a></li>
-				<li><a href="mailto:ali@alrubaye.me" class="icon fa-envelope" title="Email"><span class="label">Email</span></a></li>
-			</ul>
-		</footer>
-
-		<!-- Scripts -->
-		<script>
-			// Add subtle scroll animation
-			document.addEventListener('DOMContentLoaded', () => {
-				setTimeout(() => {
-					document.body.classList.remove('is-preload');
-				}, 500);
-			});
-		</script>
-	</body>
+    <!-- Scripts -->
+    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
 </html>
