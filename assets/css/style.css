@@ -1,149 +1,157 @@
-/* General Layout */
+:root {
+    --dark-bg: #121212;
+    --dark-teal: #006d6d;
+    --light-teal: #00a3a3;
+    --text-light: #e0e0e0;
+    --text-dark: #333;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f8f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    line-height: 1.6;
 }
 
-.bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.profile-container {
+header h1 {
     text-align: center;
-    padding: 50px 0;
+    color: var(--light-teal);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
 }
 
-.profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #fff;
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
 }
 
-/* Header */
-.header {
-    text-align: center;
-    padding: 50px 0;
+.profile-content {
+    flex: 1;
 }
 
-.header h1 {
-    font-size: 3rem;
-    color: #333;
+.profile-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--light-teal);
 }
 
-.subtitle {
+.profile-content .title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.profile-content .location {
     font-size: 1.2rem;
-    color: #666;
+    color: #aaa;
 }
 
-.name-highlight {
-    font-weight: bold;
-    color: #2a9d8f;
+.profile-image {
+    flex: 0 0 300px;
+    margin-left: 50px;
 }
 
-.location {
-    font-size: 1rem;
-    color: #444;
+.profile-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid var(--dark-teal);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Certifications Section */
 .certifications {
-    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.certifications h3 {
     text-align: center;
-    background: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--light-teal);
 }
 
-.certifications h2 {
-    font-size: 2rem;
-    color: #2a9d8f;
-    margin-bottom: 20px;
-}
-
-.certs-grid {
+.cert-grid {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .cert-card {
-    background: #f0f0f0;
+    background-color: #1e1e1e;
+    border: 1px solid var(--dark-teal);
+    border-radius: 8px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 160px;
+    width: 250px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Additional Section for "Other Certificates" */
-.other-certificates {
-    margin-top: 30px;
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 163, 163, 0.2);
 }
 
-.other-certificates a {
-    color: #2a9d8f;
-    text-decoration: none;
-}
-
-.other-certificates a:hover {
-    text-decoration: underline;
-}
-
-/* Social Footer */
-.social-footer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.social-icons {
-    list-style: none;
-    padding: 0;
+.cert-card h4 {
     margin: 0;
-    display: flex;
-    gap: 15px;
+    color: var(--light-teal);
 }
 
-.social-icons li a {
-    color: #fff;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-
-.social-footer:hover {
-    background: #333;
-}
-
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .profile-img {
-        width: 120px;
-        height: 120px;
+    .profile {
+        flex-direction: column;
     }
-
-    .header h1 {
-        font-size: 2.5rem;
+    
+    .profile-image {
+        margin: 30px 0 0 0;
+        flex: 0 0 auto;
     }
-
-    .certifications h2 {
-        font-size: 1.5rem;
-    }
-
-    .certs-grid {
+    
+    .cert-grid {
         flex-direction: column;
         align-items: center;
+    }
+}
+/* Credly Badge Styling */
+.credly-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 270px;
+    padding: 10px;
+}
+
+.credly-badge > div {
+    width: 150px !important;
+    height: 270px !important;
+}
+
+/* Adjust cert-grid for three items */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .cert-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
     }
 }
