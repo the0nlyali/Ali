@@ -3,7 +3,6 @@
     --dark-teal: #006d6d;
     --light-teal: #00a3a3;
     --text-light: #e0e0e0;
-    --text-dark: #333;
     --social-size: 40px;
 }
 
@@ -107,10 +106,10 @@ header h1 {
 /* Certifications Section */
 .certifications {
     margin-top: 50px;
+    text-align: center;
 }
 
 .certifications h3 {
-    text-align: center;
     font-size: 1.8rem;
     margin-bottom: 30px;
     color: var(--light-teal);
@@ -126,26 +125,34 @@ header h1 {
 }
 
 .cert-card {
-    width: 216px;
-    height: 216px;
-    background: transparent;
-    border-radius: 8px;
+    width: 224px; /* 200px image + 12px padding x2 */
+    height: 224px;
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.3s ease;
 }
 
+/* Border Colors */
+.blue-border { border: 2px solid #1a73e8; }
+.green-border { border: 2px solid #0f9d58; }
+.black-border { border: 2px solid #333; }
+
 .cert-card img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    border-radius: 8px;
 }
 
 .cert-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 163, 163, 0.3);
 }
 
 .more-certs {
-    text-align: center;
     margin-top: 30px;
 }
 
@@ -183,10 +190,6 @@ header h1 {
 }
 
 @media (max-width: 600px) {
-    .cert-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .cert-card {
         width: 200px;
         height: 200px;
