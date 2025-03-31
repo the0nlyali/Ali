@@ -284,3 +284,47 @@ h1 {
   border-color: var(--teal-3);
   box-shadow: 0 0 15px rgba(77, 240, 211, 0.3);
 }
+/* ===== NEW WELCOME HEADER ===== */
+.header h1 {
+    content: "Welcome to My Portfolio";
+    color: var(--teal-2);
+    margin-bottom: 10px;
+}
+
+.header .subtitle::before {
+    content: "Hi, I'm ";
+    color: var(--text-primary);
+}
+
+/* ===== CERTIFICATION VISIBILITY FIX ===== */
+.certifications {
+    scroll-margin-top: 100px; /* Prevents social bar overlap */
+}
+
+.cert-card {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* ===== SMART SOCIAL BAR ===== */
+.social-footer {
+    transition: transform 0.3s ease;
+}
+
+.social-footer.hidden {
+    transform: translateY(100%);
+}
+
+/* ===== AUTO-SCROLL EFFECT ===== */
+@media (min-width: 768px) {
+    main {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        height: 100vh;
+    }
+    
+    section {
+        scroll-snap-align: start;
+    }
+}
