@@ -4,106 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Mushtaq - Cybersecurity Engineer</title>
-    <!-- Favicon -->
-    <link rel="icon" href="./assets/images/favicon.webp" type="image/webp">
-    <link rel="shortcut icon" href="./assets/images/favicon.ico">
-    <!-- Preloads -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-    <link rel="preload" href="./assets/css/style.css" as="style">
-    <link rel="preconnect" href="https://www.credly.com">
-    <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Preload badges -->
+    <link rel="preload" href="./assets/images/badges/ethical-hacker.webp" as="image" type="image/webp">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Welcome to My Portfolio</h1>
-        </header>
-        
-        <main>
-            <section class="profile">
-                <div class="profile-content">
-                    <h2>Hi, I'm Ali Mushtaq</h2>
-                    <p class="title">Second Stage Cybersecurity Engineering Student</p>
-                    <p class="location">Alshaab University</p>
-                    <p class="location">Baghdad, IRAQ 📍</p>
-                    
-                    <div class="social-bar">
-                        <a href="https://instagram.com" target="_blank" class="social-icon instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/theonlyali" target="_blank" class="social-icon linkedin">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/the0nlyali" target="_blank" class="social-icon github">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://facebook.com" target="_blank" class="social-icon facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="mailto:ali@alrubaye.me" class="social-icon email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
+        <!-- [Keep your existing profile/social code] -->
+
+        <section class="certifications">
+            <h3>My Certifications</h3>
+            <div class="cert-grid">
+                <!-- Ethical Hacker -->
+                <div class="cert-card">
+                    <a href="https://www.credly.com/badges/f1b6e6ab-6a8b-4dde-b757-e5ff460156cc" target="_blank" aria-label="Ethical Hacker Certification">
+                        <img src="./assets/images/badges/ethical-hacker.webp" 
+                             alt="" 
+                             loading="lazy"
+                             width="216"
+                             height="216">
+                    </a>
                 </div>
-                <div class="profile-image">
-                    <img src="./assets/images/profile.webp" alt="Ali Mushtaq" loading="lazy" width="300" height="300">
+                
+                <!-- Modern AI -->
+                <div class="cert-card">
+                    <a href="https://www.credly.com/badges/df38c94c-bd59-4987-8a24-63b30edcbb1d" target="_blank" aria-label="Modern AI Certification">
+                        <img src="./assets/images/badges/modern-ai.webp" 
+                             alt="" 
+                             loading="lazy"
+                             width="216"
+                             height="216">
+                    </a>
                 </div>
-            </section>
-<section class="certifications">
-    <h3>My Certifications</h3>
-    <div class="cert-grid">
-        <!-- Ethical Hacker (Blue) -->
-        <div class="cert-card">
-            <a href="https://www.credly.com/badges/f1b6e6ab-6a8b-4dde-b757-e5ff460156cc" target="_blank">
-                <img src="https://images.credly.com/images/242902b5-f527-42ad-865e-977c9e1b5b58/image.png" 
-                     alt="Ethical Hacker Certification" 
-                     loading="lazy">
-            </a>
-        </div>
-        
-        <!-- Intro to Modern AI (Green) -->
-        <div class="cert-card">
-            <a href="https://www.credly.com/badges/df38c94c-bd59-4987-8a24-63b30edcbb1d" target="_blank">
-                <img src="https://images.credly.com/images/e2d12302-10f9-40d4-8ff1-066a7008b61d/blob" 
-                     alt="Introduction to Modern AI Certification" 
-                     loading="lazy">
-            </a>
-        </div>
-        
-        <!-- GitHub Foundations (Black) -->
-        <div class="cert-card">
-            <a href="https://www.credly.com/badges/d7b0fa9b-358c-439e-a1c3-cac3e5755ab1" target="_blank">
-                <img src="https://images.credly.com/size/220x220/badges/d7b0fa9b-358c-439e-a1c3-cac3e5755ab1/image.webp" 
-                     alt="GitHub Foundations Certification" 
-                     loading="lazy">
-            </a>
-        </div>
-    </div>
-    <div class="more-certs">
-        <a href="https://www.credly.com/users/alimushtaq" target="_blank">Other Certificates →</a>
-    </div>
-</section>
-        </main>
+                
+                <!-- GitHub Foundations -->
+                <div class="cert-card">
+                    <a href="https://www.credly.com/badges/d7b0fa9b-358c-439e-a1c3-cac3e5755ab1" target="_blank" aria-label="GitHub Foundations Certification">
+                        <img src="./assets/images/badges/github-foundations.webp" 
+                             alt="" 
+                             loading="lazy"
+                             width="216"
+                             height="216">
+                    </a>
+                </div>
+            </div>
+            <div class="more-certs">
+                <a href="https://www.credly.com/users/alimushtaq" target="_blank">Other Certificates →</a>
+            </div>
+        </section>
     </div>
 
-    <script>
-        // Badge loading with fallback
-        window.addEventListener('DOMContentLoaded', () => {
-            const script = document.createElement('script');
-            script.src = 'https://cdn.credly.com/assets/utilities/embed.js';
-            script.onerror = () => {
-                document.querySelectorAll('[data-share-badge-id]').forEach(badge => {
-                    badge.innerHTML = `
-                        <a href="https://www.credly.com/badges/${badge.dataset.shareBadgeId}" target="_blank">
-                            <img src="https://images.credly.com/size/220x220/badges/${badge.dataset.shareBadgeId}/image.webp" 
-                                 alt="Credly badge" loading="lazy" width="150" height="270">
-                        </a>`;
-                });
-            };
-            document.head.appendChild(script);
-        });
-    </script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
