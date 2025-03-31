@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Mushtaq - Cybersecurity Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="./assets/css/style.css" as="style">
     <link rel="preconnect" href="https://www.credly.com">
     <link rel="dns-prefetch" href="//cdn.credly.com">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div class="container">
@@ -21,16 +26,16 @@
                     <h2>Hi, I'm Ali Mushtaq</h2>
                     <p class="title">Second Stage Cybersecurity Engineering Student</p>
                     <p class="location">Alshaab University</p>
-                    <p class="location">Baghdad, IRAQ📍</p>
+                    <p class="location">Baghdad, IRAQ ♥</p>
                     
                     <div class="social-bar">
                         <a href="https://instagram.com" target="_blank" class="social-icon instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://linkedin.com/in/theonlyali" target="_blank" class="social-icon linkedin">
+                        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/the0nlyali" target="_blank" class="social-icon github">
+                        <a href="https://github.com" target="_blank" class="social-icon github">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://facebook.com" target="_blank" class="social-icon facebook">
@@ -42,39 +47,28 @@
                     </div>
                 </div>
                 <div class="profile-image">
-                    <img src="./assets/images/profile.webp" alt="Ali Mushtaq">
+                    <img src="./assets/images/profile.webp" alt="Ali Mushtaq" loading="lazy">
                 </div>
             </section>
 
             <section class="certifications">
                 <h3>My Certifications</h3>
                 <div class="cert-grid">
-                    <!-- Ethical Hacker (Blue) -->
-                    <div class="cert-card blue-card">
+                    <!-- Badges Only - No Text -->
+                    <div class="cert-card">
                         <div data-iframe-width="150" data-iframe-height="270" 
                              data-share-badge-id="f1b6e6ab-6a8b-4dde-b757-e5ff460156cc" 
                              data-share-badge-host="https://www.credly.com"></div>
                     </div>
-                    
-                    <!-- Intro to Modern AI (Green) -->
-                    <div class="cert-card green-card">
+                    <div class="cert-card">
                         <div data-iframe-width="150" data-iframe-height="270" 
                              data-share-badge-id="df38c94c-bd59-4987-8a24-63b30edcbb1d" 
                              data-share-badge-host="https://www.credly.com"></div>
                     </div>
-                    
-                    <!-- GitHub Foundations (Black) -->
-                    <div class="cert-card black-card">
-                        <div class="cert-content">
-                            <div data-iframe-width="150" data-iframe-height="180" 
-                                 data-share-badge-id="d7b0fa9b-358c-439e-a1c3-cac3e5755ab1" 
-                                 data-share-badge-host="https://www.credly.com"></div>
-                            <div class="cert-details">
-                                <h4>GitHub Foundations</h4>
-                                <p><strong>Issuer:</strong> GitHub</p>
-                                <p><strong>Version:</strong> 0.4.6</p>
-                            </div>
-                        </div>
+                    <div class="cert-card">
+                        <div data-iframe-width="150" data-iframe-height="270" 
+                             data-share-badge-id="d7b0fa9b-358c-439e-a1c3-cac3e5755ab1" 
+                             data-share-badge-host="https://www.credly.com"></div>
                     </div>
                 </div>
                 <div class="more-certs">
@@ -84,26 +78,24 @@
         </main>
     </div>
 
-    <!-- Badge loading system -->
-    <script>
-        // Primary load
-        const credlyScript = document.createElement('script');
-        credlyScript.src = 'https://cdn.credly.com/assets/utilities/embed.js';
-        credlyScript.async = true;
-        
-        // Fallback if primary fails
-        credlyScript.onerror = () => {
-            console.log("Using fallback badge rendering");
-            document.querySelectorAll('[data-share-badge-id]').forEach(badge => {
-                badge.innerHTML = `
-                    <a href="https://www.credly.com/badges/${badge.dataset.shareBadgeId}" target="_blank">
-                        <img src="https://images.credly.com/size/220x220/badges/${badge.dataset.shareBadgeId}/image.png" 
-                             alt="Credly badge" style="width:100%;height:100%;object-fit:contain;">
-                    </a>`;
-            });
+    <!-- Optimized Credly Badge Loading -->
+    <script defer>
+        // Load Credly async with fallback
+        const loadCredly = () => {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.credly.com/assets/utilities/embed.js';
+            script.onerror = () => {
+                document.querySelectorAll('[data-share-badge-id]').forEach(badge => {
+                    badge.innerHTML = `
+                        <a href="https://www.credly.com/badges/${badge.dataset.shareBadgeId}" target="_blank">
+                            <img src="https://images.credly.com/size/220x220/badges/${badge.dataset.shareBadgeId}/image.webp" 
+                                 alt="Credly badge" loading="lazy" width="150" height="270">
+                        </a>`;
+                });
+            };
+            document.head.appendChild(script);
         };
-        document.head.appendChild(credlyScript);
+        window.addEventListener('DOMContentLoaded', loadCredly);
     </script>
-    <script src="./assets/js/main.js"></script>
 </body>
 </html>
