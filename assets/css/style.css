@@ -1,4 +1,10 @@
-/* Base Styles */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --teal: #2a9d8f;
     --dark: #1d3557;
@@ -8,19 +14,9 @@
 body {
     background: url('../images/bg01.jpg') fixed center/cover;
     font-family: 'Segoe UI', system-ui;
-    margin: 0;
+    color: white;
+    line-height: 1.6;
     min-height: 100vh;
-    position: relative;
-    color: #ffffff;
-}
-
-/* Background Overlay */
-.bg-overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-overlay);
-    z-index: -1;
 }
 
 /* Profile Image */
@@ -43,13 +39,12 @@ body {
 
 .profile-img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 35px var(--teal);
 }
 
-/* Header Section */
+/* Header */
 .header {
-    padding: 140px 20px 40px;
     text-align: center;
+    padding: 140px 20px 40px;
 }
 
 h1 {
@@ -66,47 +61,35 @@ h1 {
 }
 
 .subtitle {
-    color: #e5e5e5;
     font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
+    opacity: 0.9;
 }
 
-.location {
-    display: block;
-    margin-top: 10px;
-}
-
-/* Certifications Section */
+/* Certifications */
 .certifications {
-    padding: 60px 20px;
-    text-align: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .certs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     padding: 20px;
 }
 
 .cert-card {
-    background: rgba(42, 157, 143, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--teal);
-    border-radius: 12px;
-    padding: 15px;
-    transition: all 0.3s ease;
-    min-height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 25px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
 .cert-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(42, 157, 143, 0.2);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Social Footer */
@@ -115,26 +98,23 @@ h1 {
     bottom: 0;
     width: 100%;
     padding: 20px 0;
-    backdrop-filter: blur(8px);
     background: rgba(29, 53, 87, 0.6);
+    backdrop-filter: blur(8px);
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
     gap: 25px;
-    padding: 0;
-    margin: 0;
     list-style: none;
 }
 
 .social-icons a {
-    color: #ffffff;
+    color: white;
     font-size: 1.8rem;
     transition: 0.3s;
 }
 
-/* Social Hover Colors */
 .social-icons a:hover {
     transform: scale(1.2);
 }
@@ -146,42 +126,9 @@ h1 {
 .fa-github:hover { color: #6e5494; }
 .fa-envelope:hover { color: #EA4335; }
 
-/* More Certificates Link */
-.more-certs {
-    display: inline-block;
-    color: var(--teal);
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 30px;
-    transition: 0.3s;
-}
-
-.more-certs:hover {
-    transform: translateX(10px);
-    text-decoration: underline;
-}
-
-/* Mobile Responsive */
+/* Mobile */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    .profile-img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .certs-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .cert-card {
-        min-height: 250px;
-    }
-
-    .social-icons {
-        gap: 15px;
-    }
+    h1 { font-size: 2rem; }
+    .profile-img { width: 120px; height: 120px; }
+    .certs-grid { grid-template-columns: 1fr; }
 }
