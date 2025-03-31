@@ -3,9 +3,11 @@
     --dark-teal: #006d6d;
     --light-teal: #00a3a3;
     --text-light: #e0e0e0;
+    --text-dark: #333;
     --social-size: 40px;
 }
 
+/* Base Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--dark-bg);
@@ -21,6 +23,7 @@ body {
     padding: 20px;
 }
 
+/* Header */
 header h1 {
     text-align: center;
     color: var(--light-teal);
@@ -28,6 +31,7 @@ header h1 {
     font-size: 2.5rem;
 }
 
+/* Profile Section */
 .profile {
     display: flex;
     justify-content: space-between;
@@ -67,8 +71,10 @@ header h1 {
     border-radius: 10px;
     border: 3px solid var(--dark-teal);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    loading: lazy;
 }
 
+/* Social Bar */
 .social-bar {
     display: flex;
     gap: 15px;
@@ -98,6 +104,7 @@ header h1 {
 .facebook { background-color: #3b5998; }
 .email { background-color: var(--light-teal); }
 
+/* Certifications Section */
 .certifications {
     margin-top: 50px;
 }
@@ -110,101 +117,6 @@ header h1 {
 }
 
 .cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-items: center;
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.cert-card {
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    padding: 0;
-    width: 250px;
-    height: 270px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cert-card > div {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.blue-card { border: 2px solid #1a73e8; }
-.green-card { border: 2px solid #0f9d58; }
-.black-card { border: 2px solid #333; }
-
-.cert-card:hover {
-    transform: translateY(-5px);
-}
-
-.more-certs {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.more-certs a {
-    color: var(--light-teal);
-    text-decoration: none;
-    font-size: 1.1rem;
-    border: 1px solid var(--light-teal);
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.more-certs a:hover {
-    background-color: var(--light-teal);
-    color: var(--dark-bg);
-}
-
-@media (max-width: 768px) {
-    .profile {
-        flex-direction: column;
-    }
-    .profile-image {
-        margin: 30px 0 0 0;
-    }
-    .cert-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* Certification Cards - Pure Image Version */
-.cert-card {
-    width: 150px;
-    height: 270px;
-    margin: 0 auto;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.badge-container {
-    width: 100%;
-    height: 100%;
-}
-
-.badge-container > div {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* Fallback Images (if embeds fail) */
-.badge-container > div:empty::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: url('https://images.credly.com/size/220x220/badges/BADGE_ID/image.png') center/contain no-repeat;
-}
-/* Certifications - Pure Image Version */
-.cert-grid {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -214,14 +126,11 @@ header h1 {
 }
 
 .cert-card {
-    width: 150px;
-    height: 270px;
+    width: 216px;
+    height: 216px;
     background: transparent;
-    transition: transform 0.3s ease;
-}
-
-.cert-card:hover {
-    transform: translateY(-5px);
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .cert-card img {
@@ -229,6 +138,10 @@ header h1 {
     height: 100%;
     object-fit: contain;
     border-radius: 8px;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
 }
 
 .more-certs {
@@ -245,4 +158,37 @@ header h1 {
 
 .more-certs a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .cert-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+    }
+    
+    .profile-image {
+        margin: 30px 0 0 0;
+        flex: 0 0 auto;
+    }
+    
+    .social-bar {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cert-card {
+        width: 200px;
+        height: 200px;
+    }
 }
