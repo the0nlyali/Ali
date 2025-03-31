@@ -4,76 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Mushtaq | Cybersecurity Engineer</title>
-    <!-- Preload Critical Assets -->
-    <link rel="preload" href="/assets/images/bg01.webp" as="image">
-    <link rel="preload" href="/assets/webfonts/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-    <!-- CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
-    <!-- Local Font Awesome -->
-    <link rel="stylesheet" href="/assets/webfonts/css/all.min.css">
-    <!-- CDN Fallback -->
-    <script>
-      if(!document.querySelector('.fa')) {
-        document.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">');
-      }
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="is-preload">
     <!-- Background & Profile -->
     <div class="bg-overlay"></div>
     <div class="profile-container">
-        <img src="/assets/images/profile.webp" alt="Ali Mushtaq" class="profile-img" loading="lazy">
+        <img src="/assets/images/profile.webp" alt="Ali Mushtaq" class="profile-img">
     </div>
 
     <!-- Main Content -->
     <main>
         <header class="header">
-            <h1>Ali Mushtaq Abdulmunem</h1>
+            <h1>Welcome to My Portfolio</h1>
             <div class="underline"></div>
             <p class="subtitle">
-                Second Stage Cybersecurity Engineering Student<br>
+                Hi, I'm <span class="name-highlight">Ali Mushtaq</span><br>
+                Cybersecurity Engineering Student<br>
                 <span class="location">📍 Baghdad, Iraq</span>
             </p>
         </header>
 
-        <!-- Certifications Section -->
-        <section class="certifications">
-            <h2>Cisco Certifications</h2>
+        <!-- Certifications Section (Visible immediately) -->
+        <section class="certifications" id="certs">
+            <h2>My Certifications</h2>
             <div class="certs-grid">
+                <!-- Single Certification -->
                 <div class="cert-card">
                     <div data-iframe-width="150" 
                          data-iframe-height="270" 
                          data-share-badge-id="d7b0fa9b-358c-439e-a1c3-cac3e5755ab1" 
                          data-share-badge-host="https://www.credly.com"></div>
                 </div>
-                <!-- Add more badges -->
             </div>
-            <a href="https://www.credly.com/users/your-profile" class="more-certs">
-                View All Certificates →
+            <a href="https://www.credly.com/users/your-profile" 
+               class="more-certs"
+               target="_blank">
+                View Other Certificates
             </a>
         </section>
-
-        <!-- Social Links -->
-        <footer class="social-footer">
-            <ul class="social-icons">
-                <li><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://facebook.com/yourprofile" target="_blank" rel="noopener">
-                    <i class="fab fa-facebook"></i></a></li>
-                <li><a href="https://instagram.com/yourprofile" target="_blank" rel="noopener">
-                    <i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://t.me/yourprofile" target="_blank" rel="noopener">
-                    <i class="fab fa-telegram"></i></a></li>
-                <li><a href="https://github.com/the0nlyali" target="_blank" rel="noopener">
-                    <i class="fab fa-github"></i></a></li>
-                <li><a href="mailto:ali@alrubaye.me">
-                    <i class="fas fa-envelope"></i></a></li>
-            </ul>
-        </footer>
     </main>
 
-    <!-- Credly + Main JS -->
+    <!-- Dynamic Social Bar -->
+    <footer class="social-footer" id="socialBar">
+        <ul class="social-icons">
+            <li><a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://facebook.com/yourprofile" target="_blank">
+                <i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://instagram.com/yourprofile" target="_blank">
+                <i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://t.me/yourprofile" target="_blank">
+                <i class="fab fa-telegram"></i></a></li>
+            <li><a href="https://github.com/the0nlyali" target="_blank">
+                <i class="fab fa-github"></i></a></li>
+            <li><a href="mailto:ali@alrubaye.me">
+                <i class="fas fa-envelope"></i></a></li>
+        </ul>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
     <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
